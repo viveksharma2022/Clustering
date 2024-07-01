@@ -52,8 +52,9 @@ void KMeansClutering<T>::KMeansInitialize() {
 }
 
 template<typename T>
-void KMeansClutering<T>::SetOptions(uint64_t iterations, float centroidTolerance) {
-
+void KMeansClutering<T>::SetOptions(const uint64_t iterations, const float centroidTolerance) {
+	options.iterations = iterations;
+	options.centroidTolerance = centroidTolerance;
 }
 
 template<typename T>

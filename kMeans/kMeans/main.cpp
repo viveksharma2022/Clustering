@@ -9,6 +9,7 @@ int main() {
 	std::vector<Utility::Point2D<float>> geodeticCoordinates;
 	Utility::ReadFromFile(fileName, geodeticCoordinates);
 	KMeansClutering<float> kMeanObj(5, geodeticCoordinates);
+	kMeanObj.SetOptions(1e2,1e-4f);
 	kMeanObj.Run();
 	Utility::WriteToFile(
 		"./data/Mall_Customers_classified.csv",
