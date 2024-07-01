@@ -31,7 +31,6 @@ public:
 	void ComputeDistanceFromCentroids(Utility::Point2D<T>& point);
 	void KMeansInitialize();
 	void SetOptions(uint64_t iterations, float centroidTolerance);
-	void ComputeNewCentroids();
 	void UpdateCentroids();
 	void Run();
 };
@@ -73,11 +72,6 @@ void KMeansClutering<T>::Run() {
 	}
 	std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
 	std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << " [µs]" << std::endl;
-}
-
-template<typename T>
-void KMeansClutering<T>::ComputeNewCentroids() {
-
 }
 
 template<typename T>
